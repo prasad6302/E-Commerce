@@ -35,3 +35,50 @@ function displayProducts(products) {
         container.appendChild(box);
     });
 }
+
+
+// Add event listeners to filter buttons
+document.querySelectorAll('.btn button').forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        if (category === 'all') {
+            displayProducts(allProducts);
+        } else {
+            const filtered = allProducts.filter(p => p.category.toLowerCase() === category);
+            displayProducts(filtered);
+        }
+    });
+});
+
+fetchProducts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
